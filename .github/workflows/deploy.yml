@@ -60,7 +60,6 @@ jobs:
           APP_ENV: 'prod'
           DATABASE_URL: postgres://postgres:password@127.0.0.1:5432/eccube_db
           DATABASE_SERVER_VERSION: 11
-          ECCUBE_PACKAGE_API_URL: "https://package-api-41beta.ec-cube.net"
         run: |
           bin/console eccube:composer:require "ec-cube/recommend4"
           bin/console eccube:composer:require "ec-cube/api"
