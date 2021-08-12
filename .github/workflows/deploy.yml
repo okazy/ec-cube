@@ -48,6 +48,7 @@ jobs:
           DATABASE_URL: postgres://postgres:password@127.0.0.1:5432/eccube_db
           DATABASE_SERVER_VERSION: 11
         run: |
+          rm -rf $GITHUB_WORKSPACE/app/Plugin/*
           echo "APP_ENV=${APP_ENV}" > .env
           echo "id,name,code,enabled,version,source,initialized,create_date,update_date,discriminator_type" > src/Eccube/Resource/doctrine/import_csv/ja/dtb_plugin.csv
           bin/console doctrine:database:create --env=dev
@@ -61,8 +62,8 @@ jobs:
           DATABASE_SERVER_VERSION: 11
           ECCUBE_PACKAGE_API_URL: "https://package-api-41beta.ec-cube.net"
         run: |
-          bin/console eccube:composer:require "ec-cube/Recommend4"
-          bin/console eccube:composer:require "ec-cube/Api"
+          bin/console eccube:composer:require "ec-cube/recommend4"
+          bin/console eccube:composer:require "ec-cube/api"
 
       - name: Checkout dtb_plugin
         run: git checkout src/Eccube/Resource/doctrine/import_csv/ja/dtb_plugin.csv
