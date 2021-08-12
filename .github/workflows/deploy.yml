@@ -62,7 +62,15 @@ jobs:
           DATABASE_SERVER_VERSION: 11
         run: |
           bin/console eccube:composer:require "ec-cube/recommend4"
+          bin/console eccube:composer:require "ec-cube/coupon4"
+          bin/console eccube:composer:require "ec-cube/mailmagazine4"
+          bin/console eccube:composer:require "ec-cube/salesreport4"
+          bin/console eccube:composer:require "ec-cube/relatedproduct4"
+          bin/console eccube:composer:require "ec-cube/securitychecker4"
+          bin/console eccube:composer:require "ec-cube/productreview4"
           bin/console eccube:composer:require "ec-cube/api"
+#          bin/console eccube:composer:require "ec-cube/sitekit"
+#          bin/console eccube:composer:require "ec-cube/gmc"
 
       - name: Checkout dtb_plugin
         run: git checkout src/Eccube/Resource/doctrine/import_csv/ja/dtb_plugin.csv
