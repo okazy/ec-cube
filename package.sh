@@ -8,26 +8,27 @@ declare -r PACKAGE_SUFFIX=${TAG_NAME:+-${TAG_NAME}}
 
 cp -a $(dirname $0) $WORKSPACE
 
-rm -rf $WORKSPACE/.editorconfig
-rm -rf $WORKSPACE/.gitignore
-rm -rf $WORKSPACE/.buildpath
-rm -rf $WORKSPACE/.gitmodules
-rm -rf $WORKSPACE/.php_cs.dist
-rm -rf $WORKSPACE/phpunit.xml.dist
-rm -rf $WORKSPACE/phpstan.neon.dist
-rm -rf $WORKSPACE/app.json
-rm -rf $WORKSPACE/Procfile
-rm -rf $WORKSPACE/LICENSE.txt
-rm -rf $WORKSPACE/README.md
-rm -rf $WORKSPACE/codeception.yml
-rm -rf $WORKSPACE/var/*
-rm -rf $WORKSPACE/.env
-rm -rf $WORKSPACE/codeception
-rm -rf $WORKSPACE/tests
-rm -rf $WORKSPACE/.github
-rm -rf $WORKSPACE/zap
-rm -rf $WORKSPACE/docker-compose.owaspzap.yml
-rm -rf $WORKSPACE/package.sh
+# codeceptionが公開されていないか
+#rm -rf $WORKSPACE/.editorconfig
+#rm -rf $WORKSPACE/.gitignore
+#rm -rf $WORKSPACE/.buildpath
+#rm -rf $WORKSPACE/.gitmodules
+#rm -rf $WORKSPACE/.php_cs.dist
+#rm -rf $WORKSPACE/phpunit.xml.dist
+#rm -rf $WORKSPACE/phpstan.neon.dist
+#rm -rf $WORKSPACE/app.json
+#rm -rf $WORKSPACE/Procfile
+#rm -rf $WORKSPACE/LICENSE.txt
+#rm -rf $WORKSPACE/README.md
+#rm -rf $WORKSPACE/codeception.yml
+#rm -rf $WORKSPACE/var/*
+#rm -rf $WORKSPACE/.env
+#rm -rf $WORKSPACE/codeception
+#rm -rf $WORKSPACE/tests
+#rm -rf $WORKSPACE/.github
+#rm -rf $WORKSPACE/zap
+#rm -rf $WORKSPACE/docker-compose.owaspzap.yml
+#rm -rf $WORKSPACE/package.sh
 find $WORKSPACE -name "dummy" -print0 | xargs -0 rm -rf
 find $WORKSPACE -name ".git*" -and ! -name ".gitkeep" -print0 | xargs -0 rm -rf
 find $WORKSPACE -name ".git*" -type d -print0 | xargs -0 rm -rf
